@@ -16,10 +16,17 @@ jobs:
       with:
         node-version: lts/*
 
-    - name: npm install, make test-coveralls
-      run: |
-        npm install
-        make test-coverralls
+    - name: npm install
+      run: npm install
+    
+    - name: run tests
+      run: npm test
+    
+    - name: Generate coverage report
+      run: npx c8 report --reporter=lcov
+
 
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.3.6
+      with:
+        path-to-lcov: ./coverage/lcov.info

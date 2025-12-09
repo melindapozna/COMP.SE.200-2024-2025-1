@@ -53,7 +53,21 @@ describe("ceil", function () {
         it("should return the same number if precision is Infinity", function () {
             expect(ceil(1.52, Infinity)).to.equal(1.52)
         })
+
+        it("should be able to process high precisions", function () {
+            expect(ceil(1.52, 10000000)).to.equal(1.52)
+        })
+
     }),
+
+    describe("Boolean conversions", function () {
+        it("should return 1 when given true", function () {
+             expect(ceil(true)).to.equal(1)
+        })
+        it("should return 0 when given false", function () {
+             expect(ceil(false)).to.equal(0)
+        })
+    })
 
     describe("Invalid inputs", function () {
         it("should return NaN for NaN", function () {

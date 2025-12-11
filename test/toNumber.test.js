@@ -1,6 +1,6 @@
 import toNumber from "../src/toNumber.js"
 import { expect } from 'chai';
-import isObject from "../src/isObject.js"
+
 
 describe("toNumber", function () {
     describe("Number-to-number conversions", function () {

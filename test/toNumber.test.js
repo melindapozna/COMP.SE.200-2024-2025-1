@@ -1,5 +1,6 @@
 import toNumber from "../src/toNumber.js"
 import { expect } from 'chai';
+import isObject from "../src/isObject.js"
 
 describe("toNumber", function () {
     describe("Number-to-number conversions", function () {
@@ -70,5 +71,34 @@ describe("toNumber", function () {
             expect(toNumber("0o720")).to.equal(464);
         });
 
+        it("should convert valid  hexadecimal string to number", function () {
+            expect(toNumber("0xAA1")).to.equal(2721);
+        });
+
     })
+
+    describe("Invalid inputs", function () {
+        it("should return NaN for symbol input", function () {
+            expect(toNumber("#!12")).to.be.NaN;
+        });
+
+        it("should return NaN if object is not convertable to number", function () {
+            const obj = { foo: 1 };
+            expect(toNumber(obj)).to.be.NaN;
+        });
+
+        it("should return NaN for bad hexadecimal string", function () {
+            expect(toNumber("0xAZ1")).to.be.NaN;
+        });
+
+        it("should return NaN for bad octal string", function () {
+            expect(toNumber("0oAZ1")).to.be.NaN;
+        });
+
+        it("should return NaN for bad binaryl string", function () {
+            expect(toNumber("0bAZ1")).to.be.NaN;
+        });
+
+    })
+
 });

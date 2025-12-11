@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/melindapozna/COMP.SE.200-2024-2025-1/badge.svg?branch=coveralls)](https://coveralls.io/github/melindapozna/COMP.SE.200-2024-2025-1?branch=coveralls)
+[![Coverage Status](https://coveralls.io/repos/github/melindapozna/COMP.SE.200-2024-2025-1/badge.svg?branch=main)](https://coveralls.io/github/melindapozna/COMP.SE.200-2024-2025-1?branch=main)
 # Student template
 
 ## Purpose of this repository

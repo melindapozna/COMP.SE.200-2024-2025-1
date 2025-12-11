@@ -21,7 +21,7 @@
   "scripts": {
     "mocha": "_mocha -b -R spec",
     "test": "c8 mocha",
-    "coverage": "c8 mocha --reporter=lcov --reporter=text-summary",
+    "coverage": "c8 mocha --reporter=lcov --reporter=spec",
     "test-coveralls": "npm test && shx cat ./coverage/lcov.info | node ./bin/coveralls.js"
   },
   "author": "",

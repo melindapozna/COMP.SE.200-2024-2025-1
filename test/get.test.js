@@ -81,4 +81,16 @@ describe("get", function () {
         });
 
     })
+
+    describe("Edge cases", function () {
+        it("should handle objects with path-like keys correctly", function() {
+            const dotObject = { 'a': [{ 'b': { 'c' : 2 }, 'b.c': { 'c': 3 } }] }
+            expect(get(dotObject, "a[0].b.c", "default")).to.equal(3)
+        })
+
+        it("should handle objects with key-like paths correctly", function() {
+            const obj = { 'a': [{'1' : 0}, { 'b': { 'c' : 2 }}] }
+            expect(get(obj, ['a', '1'], "default")).to.equal(0)
+        })
+    })
 });

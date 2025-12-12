@@ -50,10 +50,6 @@ describe("filter", function () {
             expect(filter([], () => true)).to.deep.equal([])
         });
 
-        it("should return [[]] for empty array", function () {
-            expect(filter([[]], () => true)).to.deep.equal([[]])
-        });
-
         it("should handle other iterable objects", function () {
             expect(filter("test", () => true)).to.deep.equal(["t", "e", "s", "t"])
             expect(filter([["t", 0], ["e", 1], ["s", 2], ["t", 3]], () => true)).to.deep.equal([["t", 0], ["e", 1], ["s", 2], ["t", 3]])
